@@ -1,4 +1,4 @@
-﻿# An Introduction to Mining
+# An Introduction to Mining
 
 <hr/>
 
@@ -40,54 +40,48 @@ Well, that would be the precious block reward.
 
 ### The Block Reward and Network Difficulty
 
-TODO: REPHRASE THIS! Miners, which consist of both hardware and software, are constantly working to add new transactions to the blockchain; they do so by calculating hashes for each new block until they find a valid solution, which gives them the right to add their block to the chain and have it accepted by the rest of the network.
+Miners, which are a combination of both hardware and software, are constantly working to add new transactions to the blockchain; they do so by trying to calculate and prove that the hashes they have derived both represent the most work done and all the most recent valid transactions. This, in turn, gives them the right to add their block to the chain and have it accepted by the rest of the network.
 
 Their constant work keeps the system running - without miners, the blockchain would be stuck and no transactions could be validated!
 
-To incentivize miners to keep working, every time they find a valid block solution they are given a reward.
+To incentivise miners to keep working, every time they find a valid block solution they are given a reward.
 
 Block rewards are the new coins issued by the network for each successfully solved block. These coins, plus the transaction fees paid by the users are awarded to the miner who mints that block!
 
-The likelihood that any one miner is able to calculate the required hashes, and hence solve the next block, is directly correlated to the number of hashes they can calculate per second (H/s), or hashrate.
-
-That being said, it may not necessarily be the miner with the largest hashrate who mints the next block. This is because every single hash they calculate has an equal chance of being a valid solution for the next block in the chain - so there is an element of luck involved!
+That being said, it may not necessarily be the miner with the largest hashrate who mints the next block. This is in part due to the complexity of the task at hand. Each and every hash has an equal and valid chance of satisfying the next block in the chain. In other words there's an element of luck involved!
 
 The Monero network aims to add a new block onto the chain approximately every 120 seconds, which is equal to around 720 blocks per day. To achieve this rate, a balance is required to prevent miners from solving blocks too quickly or too slowly. This balance is called the network difficulty. 
 
-The network difficulty is calculated by looking at the average block time from the last day, whilst also excluding random outliers, mainly the very slow or very fast blocks. The difficulty is hence adjusted accordingly. The mining process is random, but statistically predictable: this difficulty value represents the average number of hashes it will take to find the next solution.
+The network difficulty is calculated by looking at the average block time from the last day, whilst also excluding random outliers, mainly the very slow or very fast blocks. The difficulty is hence adjusted accordingly. The mining process is random, but statistically predictable; this difficulty value represents the average number of hashes required to mint the next block.
 
 It's from this difficulty value that we can estimate the hashrate of the entire network. Taking the current network difficulty and then dividing it by the block target time gives us this estimate. With a difficulty of 300G we can estimate the entire network hasrate to be around 2,5GH/s; 300GH ÷ 120s = 2,5GH/s.
 
-The existence of the block reward incentives competition between miners and hence drives up the total hash rate of the network. That is typically until the cost of adding more hashing power is higher than the reward of obtaining that proportion of mined blocks. We emphasise 'typically', as die hard Monero fans will even mine at a loss during those bear market scenarios.
+The existence of the block reward incentives competition between miners and hence drives up the total hashrate of the network. That is typically true until the cost of adding more hashing power is higher than the reward of obtaining that proportion of mined blocks. We emphasise 'typically', as die hard Monero fans will even mine at a loss during those bear market scenarios.
 
-Think of mining rewards as a pie: when new miners join, everyone gets a smaller slice of the pie; when they leave, those who are left get a bigger slice instead. Similarly, as Monero becomes more valuable, the size of the pie increases and so does the mining network, until a new balance is reached.
+Think of mining rewards as a pie. When new miners join, everyone gets a smaller slice of the pie; when they leave, those left get a larger slice. Similarly, as Monero becomes more valuable, the size of the pie increases as does the mining network, until a new balance is reached and everyone is full.
 
 
 ### Network Security
 
 Consensus, is the method by which judgement is cast and the state of the block chain is determined. For consensus to be reached, more than 50% of the network participants must agree on the state of the block chain.
 
-Strictly speaking; miners are not only competing for the block reward and fees, but the right to mint the next block in the chain and to propagate their version of the block chain history.
+Strictly speaking, miners are not only competing for the block reward and fees, but the right to mint the next block in the chain and to propagate their version of the block chain history.
 
-Given that consensus is required by the Monero protocol, users are forced to consider the following; In the event that rule breaking and dishonest miners out number the rule abiding and honest ones, the legitimate block chain history will be broken.
-
-In other words, the legitimate history can be broken by an individual or group of miners who control more than 50% of the hashing power of the network.
+Given that consensus is required by the Monero protocol, users are forced to consider the following; in the event that rule breaking and dishonest miners out number the rule abiding and honest ones, the legitimate block chain history will be broken. In other words, the legitimate history can be broken by an individual or group of miners who control more than 50% of the hashing power of the network.
 
 This may sound scary at first, but owning more that 50% of the hash rate at the time of making this video, is extremely expensive. 
 
-For greater context; as of the 15^th of May 2022, the global hash rate of the Monero network is around 2,8 GH/s. One of the most powerful server grade CPUs currently available, retailing for around €6500 can achieve a hash rate of 100 kH/s. 
+For greater context, on the 15^th of May 2022, the global hash rate of the Monero network was around 2,8 GH/s. One of the most powerful server grade CPUs currently available, whos retail price is around €6500 can achieve a hash rate of 100 kH/s. 
 
-Just to start, the attacker would need more than 28000 of these CPUs costing over €182m. This is obviously quite a simple and brutal estimation and it may be simpler to hijack an existing pools capabilites, however it illustrates the point well enough.
+If working alone, the attacker would need more than 28000 of these CPUs costing over €182m. This is obviously quite a simple and brutal estimation and likely simpler to hijack an existing pools capabilities, however it illustrates the point well enough for now. A more realistic scenario; a group takes control.
 
-Next we could consider the more realistic scenario, a group takes control.
-
-To introduce the next topic we should make solving the next block analogous with winning the lottery. Although it's not entirely correct, for those taking part with a comparatively low hash rate the ability to solve a block tends to it.
+To introduce the next topic we should make solving the next block analogous with winning the lottery. Although it's not entirely correct, for those taking part with a comparatively low hash rate the ability to solve a block tends towards it.
 
 A rough calculation for the time an individual needs to solved a block follows; network hashrate ÷ personal hasraterate × block time = time to find a block.
 
 Using the same CPU we mentioned previously, it would take; ((2,5×10^9)÷(100×10^3))×(120)=3000000 s or 35 days to solve a block. This assumes that you are not 'unlucky' and do indeed solve one during this time. Luck in this case is often calculated as a percentage of this value.
 
-When trying to win the lottery one can compete on their own or alongside others in the form of a syndicate. Syndicates in this case are called pools and are a common way for miners to ensure that they receive a steady income for the work the produce.
+When trying to win the lottery one can compete on their own or alongside others in the form of a syndicate. Syndicates in this case are called pools and are a common way for miners to ensure that they receive a steady income for the work they produce.
 
 For both a mining calculator and a list of the current publicly available pools please take a look at [miningpoolstats.stream](https://miningpoolstats.stream/monero). Here we can find links to the pools, view how the hashrate and blocks are distributed across them and use the calculator.
 
@@ -152,7 +146,7 @@ If P2Pool's hashrate isn't high enough to find Monero blocks every 6 hours as a 
 
 [P2Pool.observer](https://p2pool.observer/) also has a form of calculator on their web page. You can use this calculator to estimate the time in which it will take you to find a share. It does this by dividing the current difficulty by your hashrate. Let's head back to the main page; you will see it labelled *Average Share Time Calculator*. After entering our machines hashrate and hitting the *calculate* button, we'll be given our estimate.
 
-You may have noticed when we visited [miningpoolstats.stream](https://miningpoolstats.stream/monero) that there were two entries for P2Pool. At the time of making this video there are two different P2Pools; the first and largest is the original the second, nicknamed 'mini' is a smaller and newer edition. Mini was established in order to reduce the intervals between shares found and further bolster the number of decentralised pools which support the network. In an ideal world, all the current pools would switch the the decentralised model, howver progress takes time.
+You may have noticed when we visited [miningpoolstats.stream](https://miningpoolstats.stream/monero) that there were two entries for P2Pool. At the time of making this video there are two different P2Pools; the first and largest is the original the second, nicknamed 'mini' is a smaller and newer edition. Mini was established in order to reduce the intervals between shares found and further bolster the number of decentralised pools which support the network. In an ideal world, all the current pools would switch the the decentralised model, however progress takes time.
 
 To get an idea of how much Monero you may mine per day you can do you own calculation. You need to first multiply the number of blocks produced each day by the amount of Monero supplied with each block. As the Monero network has entered its tail emission phase, each block is now worth 0,6 XMR and will continue like this indefinitely which will hold true, unless the code is changed. As discussed, we already know that around 720 blocks are produced each day. 
 
@@ -179,13 +173,13 @@ Conversely, Intel CPUs typically have smaller L3 caches, meaning there isn't eno
 
 The hashrate displayed to the right of each processor is always the highest score from all the submissions. It's wrong to presume that just because you have this CPU or plan to buy it, that this is the hashrate you will achieve.
 
-These values displayed are a  result of numerous factors, the first of which will be the clock speed and power consumed by the chip. You may have some across the term [overclocking](https://en.wikipedia.org/wiki/Overclocking); these high scores are often achieved because the hardware has been pushed to the limits of stability. These scores are typically achieved using an enormous amount of power whilst generating just as much heat!
+These values displayed are a  result of numerous factors, the first of which will be the clock speed and power consumed by the chip. You may have already come across the term [overclocking](https://en.wikipedia.org/wiki/Overclocking); these high scores are often achieved because the hardware has been pushed to the limits of stability. 
 
-You will find that these scores are more about showing off, rather than something desirable in any normal mining machine.
+These scores are typically achieved using a disproportionate amount of power whilst generating emence heat! You will find that these scores are more about showing off, rather than something desirable in any normal mining machine. As a miner, it is in your economic interest to use as little electricity as possible! Our experience shows that common Ryzen desktop processors are utilised sensibly and efficiently when hasrate is equal to around 80% of these top scores.
 
-If we click on the the name of the CPU we will be taken to a page which will show us details of more submitted benchmarks. You will find quite a lot of variance, further details of each result can be seen using the button provided.
+If we click on the the name of the CPU we will be taken to a page which will show us details of more submitted benchmarks. You will find quite a lot of variance here and further details of each result can be seen using the button provided.
 
-There are two other factors which greatly affect these scores. They are RAM latency and the number of memory channels available.
+Other that your choice of processor, there are two other factors which greatly affect these scores. They are RAM latency and the number of memory channels available.
 
 The faster your memory, the better it will perform when mining. Absolute latency is calculated as being equal to **(CAS latency×2000)÷Frequency**. An example follows; a memory module running @ 3200Mhz with a CAS Latency (CL) of 14 has a latency of 9.75 ms. Typically, B-die from Samsung performs best in this regard. That being said, one should always consider price relative to the performance increase.
 
@@ -206,15 +200,15 @@ In order to know how efficiently we are mining, we need to know how fast our mac
 
 Let's use the previous example where we have a machine hashing at 10 kH/s and them give it an arbitrary power value. In this calculation we are going to determine the number of hashes per [Joule](https://en.wikipedia.org/wiki/Joule).
 
--> 10000 H/s ÷ 114W ≈ 87.72 H/J
+-> 10000 H/s ÷ 96W ≈ 104 H/J
 
 To make this more relatable we can then convert this to hashes per [kilowatt-hour](https://en.wikipedia.org/wiki/Kilowatt-hour). The purpose of doing this is to make it more relatable to the way in which electricity is bought.
 
--> 87,72 H/J ÷ (1÷3600000)  ≈  316×10^6 H/kWh
+-> 104 H/J ÷ (1÷3600000)  ≈  374×10^6 H/kWh
 
-Knowing this we can take things even further! Now we can calculate the cost or profit we stand to make whilst mining Monero.
+Knowing this we can take things even further; now we can calculate the cost or profit we stand to make whilst mining Monero.
 
-Let's assume a domestic electricity cost of €0.19 per 1 kWh. We can hence say that for every €0.19 we spend of electricity, we buy 316×10^6 H/kWh.
+Let's assume a domestic electricity cost of €0.19 per 1 kWh. We can hence say that for every €0.19 we spend of electricity, we buy 374×10^6 H/kWh.
 
 Now you may be fortunate enough to be using wind or solar power and this calculation is not exactly required; you may even have free electricity! Regards of these facts it is still an interesting exercise and food for thought.
 
@@ -228,17 +222,17 @@ With a pool hashrate of 11x10^6 H/s the difficulty would hence be 110×10^6 H.
 
 We already know that €0,19 buys us 316×10^6 H/kWh. So we can then calculate the cost of each share using the following equation:
 
--> 316×10^6 H/kWh ÷ 110×10^6 H ≈ 2,87 
--> €0,19 ÷ 2,87 ≈ €0,066
+-> 374×10^6 H/kWh ÷ 110×10^6 H ≈ 3,4 
+-> €0,19 ÷ 3,4 ≈ €0,055
 
 The value of each of these shares is always changing and directly correlated to the price of Monero. Assuming one has a single share in the PPLNS window when a Monero block is found, a share is then worth 1/2160 of the block reward. Using €167 as the value of Monero, we can calculate the value of a single share:
 
--> 0,6/2160 ≈ 0,00027 XMR per share 
--> 0.00025×**€167** ≈ €0.042
+-> 0,6×(1/2160) ≈ 0,00027 XMR per share 
+-> 0,00027×**€167** ≈ €0.043
 
-We are mining at a considerable loss in this example. It costs €0,066 to mine €0,042 worth of XMR which equates to a whopping 37% loss!
+We are mining at a considerable loss in this example. It costs €0,055 to mine €0,042 worth of XMR which equates to a whopping 23% loss!
 
-In order to break even in this case, either Monero needs a value of €262 or 1 kWh of electricity must cost **€0,12**
+In order to break even in this case, either Monero needs a value of €203 or 1 kWh of electricity must cost **€0,14**
 
 Especially during [bear markets](https://en.wikipedia.org/wiki/Market_trend#Bear_market) you should count yourself rather lucky if mining Monero is still profitable.
 
